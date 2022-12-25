@@ -20,6 +20,9 @@ public class Bus extends vehicle{
        
         return (hours*15);
     }
-    
+    @Override
+    public String toString() {
+        return "Bus{" + " ID=" + ID + " , Occupied Space = "+len+'}';
+    }
     
 }

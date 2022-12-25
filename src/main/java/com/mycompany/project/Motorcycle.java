@@ -18,6 +18,9 @@ public class Motorcycle extends vehicle{
     public double calcMoney(double hours) {
         return hours*5;
     }
+     public String toString() {
+      return  "Motorcycle{" + " ID=" + ID + " , Occupied Space = "+len+'}';
+    }
     
     
 }

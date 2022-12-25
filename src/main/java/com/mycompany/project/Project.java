@@ -10,7 +10,11 @@ import java.util.*;
 
 /**
  *
- * @author mhass
+ * @author cgmoreda
+ * @author Elglaly
+ *  AUN Software Engineering Project
+ * By Mohamed Reda Hassanien and Sherif Ashraf Ali 
+ * 
  */
 public class Project {
 
@@ -21,13 +25,15 @@ public class Project {
          Scanner cin= new Scanner(System.in);
      
              ArrayList<vehicle> vehicles = new ArrayList(50);
-         System.out.println("Welcome to garage systems 2.0");
+         System.out.println("Welcome to garage systems 2.0\n");
             int Total_space=100;
       
          while(true){
         
-            System.out.println("Enter The Garage (1)");
-            System.out.println("Exit The Garage (2)");
+            System.out.println("Enter (1) To add a vehicle");
+            System.out.println("Enter (2) To Leave The Garage  ");
+            System.out.println("Enter (3) To show Sataus of The Garage");
+            System.out.println("Enter (0) End the Program\n");
           
             int a=cin.nextInt();
             String id;
@@ -35,11 +41,11 @@ public class Project {
             
              if(a == 1)
             {
-                System.out.println("empty space = "+Total_space);
+                System.out.println("Empty space = "+Total_space);
                 while(true)
                 {
                     
-                System.out.println("Please Enter The Vehicle ID");
+                System.out.println("Please Enter The Vehicle ID\n");
                
                 id=cin.next();
                  
@@ -50,7 +56,7 @@ public class Project {
                                if(vehicles.get(i).getID().equals(id))
                                {
 
-                                   System.out.println("This ID is Already Taken, Try Again (^///^) ");
+                                   System.out.println("This ID is Already Taken, Try Again  \n");
                                    exist=true;
                                    break;
                                }
@@ -63,7 +69,7 @@ public class Project {
                }
                 
             
-                System.out.println("please Enter The Vehicle Type(Car,Truck,Bus,Motorcycle)");
+                System.out.println("please Enter The Vehicle Type From This List (Car,Truck,Bus,Motorcycle)\n");
                
                 String Type_of_vehicle=cin.next();
                 String tov=Type_of_vehicle.toLowerCase();
@@ -73,7 +79,7 @@ public class Project {
                 {
                     if(Total_space<5  )
                     {
-                        System.out.println("There is no space try again later");
+                        System.out.println("There is no space try again later\n");
                         
                     }
                     else 
@@ -92,7 +98,7 @@ public class Project {
                 {  
                      if(Total_space<7  )
                     {
-                        System.out.println("There is no space try again later");
+                        System.out.println("There is no space try again later\n");
                         
                     }
                   
@@ -109,7 +115,7 @@ public class Project {
                 {  
                      if(Total_space<10 )
                     {
-                        System.out.println("There is no space try again later");
+                        System.out.println("There is no space try again later\n");
                         
                     }
                      else {
@@ -124,9 +130,9 @@ public class Project {
                 }
                 else if(tov.equals("motorcycle"))
                 {
-                     if(Total_space<5  )
+                     if(Total_space<2  )
                     {
-                        System.out.println("There is no space try again later");
+                        System.out.println("There is no space try again later\n");
                         
                     }
                      else{
@@ -135,6 +141,12 @@ public class Project {
                     vehicles.add(temp);
                      Total_space-=temp.len;
                      }
+                }
+                else
+                {
+                    
+                    System.out.println("Failed to add vehicle (vehicle Type is not supported) \n");
+
                 }
                 
                 
@@ -166,13 +178,28 @@ public class Project {
                              if(exist)break;
                  }
             }
+            
+            else if(a==3)
+            {
+                for(int i=0;i<vehicles.size();i++)
+                {
+                    System.out.println("Position "+(i+1)+" : "+vehicles.get(i).toString());
+                    
+                }
+                System.out.println("Total Occupied space = "+(100-Total_space)); 
+                System.out.println("Total Empty space = "+(Total_space));
+                System.out.println();
+                
+            }
+            
             else if (a==0) 
             {
+                System.out.println("Thanks for using Garage System 2.0");
                 break;
             }
             else 
             {
-                System.out.println("Try Again or type 0 TO EXIT the system");
+                System.out.println("Try Again or Type 0 TO EXIT the system\n");
             }
         
     }

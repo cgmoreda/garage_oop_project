@@ -21,5 +21,12 @@ public class Truck extends vehicle{
         len=7;
         
     }
+
+    @Override
+    public String toString() {
+      return  "Truck{" + " ID=" + ID + " , Occupied Space = "+len+'}';
+    }
+
+   
     
 }

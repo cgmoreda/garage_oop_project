@@ -19,5 +19,8 @@ public class Car extends vehicle{
     public double calcMoney(double hours) {
         return hours*10;
     }
-
+@Override
+    public String toString() {
+        return "Car{" + " ID=" + ID + " , Occupied Space = "+len+'}';
+    }
 }

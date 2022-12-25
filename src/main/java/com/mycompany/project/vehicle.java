@@ -37,5 +37,12 @@ public  class  vehicle {
     public  double calcMoney(double hours){
     return 0;
     }
+
     
+    @Override
+    public  String toString() {
+        return "vehicle{" + "len=" + len + ", ID=" + ID + '}';
+    }
+
+  
 }
